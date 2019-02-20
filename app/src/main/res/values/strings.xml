@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Link Development</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Welcome</string>
+    <string name="nav_header_subtitle">Ahmed Abdallah</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="explore_text">explore</string>
+    <string name="live_chat_text">Live Chat</string>
+    <string name="gallery_text">Gallery</string>
+    <string name="wishlist_text">Wish List</string>
+    <string name="emagazine_text">E-Magazine</string>
+</resources>
