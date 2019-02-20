@@ -52,16 +52,17 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsFeedViewHo
             holder.textviewarticletitle.setText(article.getTitle());
             holder.textViewArticleAuthor.setText(article.getDescription());
             //
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+            DateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
             Date date = null;//You will get date object relative to server/client timezone wherever it is parsed
             try {
                 date = dateFormat.parse(article.getPublishedAt());
+                DateFormat formatter = new SimpleDateFormat("dd-MMMM-yyyy"); //If you need time just put specific format for time like 'HH:mm:ss'
+                String dateStr = formatter.format(date);
+                holder.textViewArticlePublishedTime.setText(dateStr);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd"); //If you need time just put specific format for time like 'HH:mm:ss'
-            String dateStr = formatter.format(date);
-            holder.textViewArticlePublishedTime.setText(dateStr);
+
             Glide.with(mCtx).load(article.getUrlToImage()).placeholder(resources.getDrawable(R.drawable.placeholder)).into(holder.articleImageView);
 
 

@@ -73,6 +73,16 @@
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
+    <Button
+        android:id="@+id/button_webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/news_feed_container"
+        android:background="@color/black"
+        android:textSize="20sp"
+        android:text="@string/button_text"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"/>
 
 </RelativeLayout>
 
