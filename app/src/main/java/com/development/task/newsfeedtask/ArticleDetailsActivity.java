@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.development.task.newsfeedtask.helper.DateHelper;
 import com.development.task.newsfeedtask.model.Article;
 
 import org.w3c.dom.Comment;
@@ -78,7 +79,7 @@ public class ArticleDetailsActivity extends AppCompatActivity {
         titleText.setText(article.getTitle());
         articleDescription.setText(article.getDescription());
         articleAuthor.setText(article.getAuthor());
-        articledate.setText(convertToDate(article.getPublishedAt()));
+        articledate.setText(DateHelper.convertToSpecificFormat(article.getPublishedAt()));
         Glide.with(this).load(article.getUrlToImage()).fitCenter().placeholder(R.drawable.placeholder).into(articleimageView);
         gotoWebVIewButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,21 +91,6 @@ public class ArticleDetailsActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    private String convertToDate(String publishedAt) {
-        DateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy'T'HH:mm:ss");
-        Date date = null;//You will get date object relative to server/client timezone wherever it is parsed
-        String dateStr ="";
-        try {
-            date = dateFormat.parse(publishedAt);
-            DateFormat formatter = new SimpleDateFormat("dd-MMMM-yyyy"); //If you need time just put specific format for time like 'HH:mm:ss'
-             dateStr = formatter.format(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        return dateStr;
     }
 
 }

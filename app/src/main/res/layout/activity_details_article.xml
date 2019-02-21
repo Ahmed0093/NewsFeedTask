@@ -2,14 +2,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-    <include layout="@layout/toolbar"
-        android:id="@+id/article_detail_appbar"/>
+
+    <include
+        android:id="@+id/article_detail_appbar"
+        layout="@layout/toolbar" />
 
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-      android:layout_below="@+id/article_detail_appbar"
         android:id="@+id/news_feed_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/article_detail_appbar"
         android:layout_margin="20dp"
         android:orientation="horizontal">
 
@@ -35,7 +37,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|right"
                     android:layout_marginRight="10dp"
-                    android:text="15 april , 2017" />
+                    android:text="15 april , 2017"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </FrameLayout>
 
             <LinearLayout
@@ -73,16 +77,17 @@
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
+
     <Button
         android:id="@+id/button_webview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/news_feed_container"
+        android:layout_margin="20dp"
         android:background="@color/black"
-        android:textSize="20sp"
         android:text="@string/button_text"
         android:textColor="@color/white"
-        android:layout_margin="20dp"/>
+        android:textSize="20sp" />
 
 </RelativeLayout>
 
