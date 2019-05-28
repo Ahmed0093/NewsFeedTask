@@ -56,7 +56,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsFeedViewHo
         holder.textViewArticlePublishedTime.setText(DateHelper.convertToSpecificFormat(article.getPublishedAt()));
 
 
-        Glide.with(mCtx).load(article.getUrlToImage()).placeholder(resources.getDrawable(R.drawable.placeholder)).into(holder.articleImageView);
+        Glide.with(mCtx).load(article.getImgBitmap()).placeholder(resources.getDrawable(R.drawable.placeholder)).into(holder.articleImageView);
 
 
     }
@@ -83,7 +83,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsFeedViewHo
             articleContainer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    adapterClickListener.onArticleItemClicked(articleList.get(getAdapterPosition()));
+                   // adapterClickListener.onArticleItemClicked(articleList.get(getAdapterPosition()));
                 }
             });
 

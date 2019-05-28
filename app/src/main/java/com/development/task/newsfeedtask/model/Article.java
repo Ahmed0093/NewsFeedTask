@@ -1,5 +1,7 @@
 package com.development.task.newsfeedtask.model;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
@@ -27,6 +29,24 @@ public class Article implements Serializable {
     @SerializedName("publishedAt")
     @Expose
     private String publishedAt;
+    private Bitmap imgBitmap;
+    private Uri imgUri;
+
+    public Uri getImgUri() {
+        return imgUri;
+    }
+
+    public void setImgUri(Uri imgUri) {
+        this.imgUri = imgUri;
+    }
+
+    public Bitmap getImgBitmap() {
+        return imgBitmap;
+    }
+
+    public void setImgBitmap(Bitmap imgBitmap) {
+        this.imgBitmap = imgBitmap;
+    }
 
     public String getAuthor() {
         return author;

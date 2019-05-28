@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiCLient {
 
-        private final static String BASE_URL = "https://newsapi.org/";
+        private final static String BASE_URL = "https://samples.openweathermap.org/data/2.5/";//https://newsapi.org/";
 
         private static Retrofit retrofit = null;
 
